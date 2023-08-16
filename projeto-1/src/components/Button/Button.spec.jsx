@@ -45,4 +45,10 @@ describe('<Button/>', ()=>{
         expect(button).toBeEnabled()
 
     })
+
+    it('Should match snapshot', ()=>{
+
+        const {container} = render(<Button text="Load more"/>);
+        expect(container.firstChild).toMatchSnapshot()
+    })
 })
