@@ -1,51 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
-import { Component } from 'react';
+import { useState } from 'react';
 
-/*
 function App() {
+  const [reverse, setReverse] = useState(false);
+  const [counter, setCounter] = useState(0);
+
+  const reverseClass = reverse ? 'App-logo-reverse' : '';
+
+  const handleClick = () => {
+    setReverse(!reverse);
+  };
+  const handleIncrement = () => {
+    setCounter(counter + 1);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <img src={logo} className={`App-logo ${reverseClass}`} alt="logo" />
+        <h1>Counter: {counter}</h1>
+        <button
+          type="button"
+          onClick={() => {
+            handleClick();
+            handleIncrement();
+          }}
         >
-          Learn React
-        </a>
+          Reverse
+        </button>
       </header>
     </div>
   );
-}
-*/
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
 }
 
 export default App;
